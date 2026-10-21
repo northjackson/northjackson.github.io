@@ -1,71 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jackson North | MSGIS Portfolio</title>
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="Jackson North's University of Utah MSGIS portfolio: remote sensing, spatial analysis, geospatial data science, and hydroinformatics.">
+  <title>Jackson North | GIS & Environmental Data</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px;
-      color: #222;
-      line-height: 1.6;
-    }
-    nav {
-      padding: 20px 0;
-      border-bottom: 1px solid #ddd;
-    }
-    nav a {
-      margin-right: 20px;
-      color: #245a78;
-      text-decoration: none;
-    }
-    header { padding: 60px 0; }
-    h1 { font-size: 42px; margin-bottom: 5px; }
-    .project {
-      padding: 20px 0;
-      border-bottom: 1px solid #ddd;
-    }
+    :root{--paper:#f6f5ef;--white:#fffefa;--forest:#203f36;--pine:#315b4c;--sage:#dce7db;--ink:#24322c;--muted:#637269;--line:#d9ded5;--sand:#eae4d7;--gold:#a87845;--radius:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit}a:focus-visible{outline:3px solid var(--gold);outline-offset:4px} .wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+    .site-header{position:sticky;top:0;z-index:10;background:rgba(246,245,239,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-size:1.07rem;font-weight:750;letter-spacing:-.02em;color:var(--forest)}.brand span{display:block;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}.nav-links{display:flex;flex-wrap:wrap;gap:26px}.nav-links a{text-decoration:none;color:var(--forest);font-size:.87rem;font-weight:650}.nav-links a:hover{color:var(--gold)}
+    .hero{padding:104px 0 92px;position:relative;overflow:hidden}.hero::after{content:"";position:absolute;right:-110px;top:50px;width:490px;height:490px;border-radius:50%;border:1px solid #cdd9cd;box-shadow:0 0 0 38px #e8ede4,0 0 0 39px #d4dfd3,0 0 0 86px #f0f0e8;opacity:.65;pointer-events:none}.hero-inner{position:relative;z-index:1;max-width:780px}.eyebrow{display:inline-flex;gap:10px;align-items:center;text-transform:uppercase;letter-spacing:.18em;font-size:.73rem;font-weight:750;color:var(--pine)}.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.4rem,7.5vw,6.4rem);font-weight:500;line-height:1.08;letter-spacing:-.055em;margin:20px 0 22px;color:var(--forest)}h1 em{font-style:normal;color:var(--pine)}.lead{font-size:clamp(1.08rem,2vw,1.35rem);color:#46594f;max-width:660px;line-height:1.65}.hero-meta{margin:24px 0 30px;font-size:.87rem;font-weight:650;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:11px 20px;border-radius:7px;text-decoration:none;font-size:.88rem;font-weight:750;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--forest);color:#fff}.btn-primary:hover{background:#315e4e}.btn-secondary{border:1px solid #b8c7b9;color:var(--forest);background:#ffffffa8}
+    section{scroll-margin-top:100px}.section{padding:75px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-label{color:var(--pine);text-transform:uppercase;letter-spacing:.15em;font-size:.73rem;font-weight:800;margin-bottom:9px}.section h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:500;letter-spacing:-.04em;line-height:1.2;margin-bottom:0;color:var(--forest)}.section-note{max-width:420px;color:var(--muted);font-size:.91rem;margin:0}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.project-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,border-color .2s}.project-card:hover{transform:translateY(-3px);border-color:#b5c7b5}.visual{height:174px;position:relative;overflow:hidden;background-color:#c7d6c6;background-image:repeating-radial-gradient(ellipse at 75% 25%,transparent 0 17px,rgba(255,255,255,.32) 18px 19px,transparent 20px 36px),linear-gradient(125deg,#b8ccbc,#dce5d6 54%,#c4cdb7)}.visual.water{background-image:repeating-radial-gradient(ellipse at 20% 80%,transparent 0 16px,rgba(255,255,255,.33) 17px 18px,transparent 19px 34px),linear-gradient(120deg,#86a9a4,#c4d8c9 55%,#a3bca5)}.visual.earth{background-image:repeating-radial-gradient(ellipse at 70% 50%,transparent 0 18px,rgba(255,255,255,.32) 19px 20px,transparent 21px 40px),linear-gradient(115deg,#c3b79e,#e8dfcb,#b4c5ae)}.visual.slate{background-image:repeating-radial-gradient(ellipse at 30% 30%,transparent 0 16px,rgba(255,255,255,.24) 17px 18px,transparent 19px 38px),linear-gradient(120deg,#819d92,#c6d1c5,#8aa69a)}.visual.forest{background-image:repeating-radial-gradient(ellipse at 60% 30%,transparent 0 16px,rgba(255,255,255,.25) 17px 18px,transparent 19px 37px),linear-gradient(125deg,#7e9d7d,#bbd0b1,#789788)}.visual-label{position:absolute;bottom:16px;left:18px;background:rgba(32,63,54,.9);color:white;padding:5px 10px;border-radius:4px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:750}.project-body{padding:24px}.project-body h3{font-family:Georgia,"Times New Roman",serif;color:var(--forest);font-weight:500;font-size:1.55rem;line-height:1.25;margin-bottom:8px}.project-body p{color:var(--muted);font-size:.91rem;margin-bottom:15px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{background:#edf1e9;border:1px solid #dce5da;border-radius:5px;color:#3c604d;font-size:.72rem;padding:3px 8px;font-weight:650}.project-foot{border-top:1px solid var(--line);margin-top:20px;padding-top:13px;color:var(--pine);font-size:.8rem;font-weight:750}.project-foot a{text-decoration:none}.project-foot a:hover{text-decoration:underline}
+    .band{background:var(--forest);color:#edf4eb}.band .section-label{color:#c1d8b9}.band h2{color:#fff}.band .section-note{color:#d2ded3}.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}.skill{border:1px solid #557064;border-radius:10px;padding:22px;background:#ffffff0b}.skill h3{font-size:1rem;color:#fff;margin-bottom:8px}.skill p{font-size:.85rem;color:#d3dfd6;margin:0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}.about-copy{color:#4c5d53}.info{padding:23px;border-radius:var(--radius);background:var(--sand);border:1px solid #ded9cc}.info h3{font-size:1rem;color:var(--forest)}.info p{font-size:.9rem;margin-bottom:12px}.info p:last-child{margin:0}.footer{padding:32px 0;border-top:1px solid var(--line);font-size:.81rem;color:var(--muted)}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:var(--pine)}
+    @media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:16px 0;gap:12px}.nav-links{gap:16px}.hero{padding:68px 0 75px}.hero::after{opacity:.25;right:-280px}.section{padding:56px 0}.section-head{align-items:start;flex-direction:column;gap:12px}.project-grid,.about-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}.about-grid{gap:24px}}@media(max-width:480px){.wrap{width:min(100% - 32px,1120px)}.skills-grid{grid-template-columns:1fr}.visual{height:145px}.nav-links{gap:12px}.nav-links a{font-size:.8rem}}
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-  </nav>
-
-  <header>
-    <h1>Jackson North</h1>
-    <p>Master of Science in Geographic Information Science</p>
-    <p>University of Utah | 2026</p>
-    <p>
-      Geospatial analysis, remote sensing,
-      hydroinformatics, and spatial data science.
-    </p>
-  </header>
-
-  <section id="projects">
-    <h2>Selected Projects</h2>
-    <div class="project">Geospatial Big Data</div>
-    <div class="project">Remote Sensing</div>
-    <div class="project">Spatial Data</div>
-    <div class="project">Hydroinformatics</div>
-    <div class="project">Capstone</div>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      MSGIS graduate student at the University of Utah
-      with interests in geospatial analysis,
-      remote sensing, and water resources.
-    </p>
-  </section>
-
+  <header class="site-header"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="#home">Jackson North<span>Geographic Information Science</span></a><div class="nav-links"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav></header>
+  <main>
+    <section class="hero" id="home"><div class="wrap hero-inner"><span class="eyebrow">GIS · Earth observation · Water resources</span><h1>Mapping landscapes.<br><em>Understanding change.</em></h1><p class="lead">I'm Jackson North, a master's student in Geographic Information Science at the University of Utah. My work brings together geospatial analysis, remote sensing, and environmental data to explore questions about landscapes and water resources.</p><p class="hero-meta">University of Utah · MSGIS Portfolio · 2026</p><div class="actions"><a class="btn btn-primary" href="#projects">Explore my work &rarr;</a><a class="btn btn-secondary" href="#about">About me</a></div></div></section>
+    <section class="section" id="projects"><div class="wrap"><div class="section-head"><div><p class="section-label">Selected coursework</p><h2>Projects & research</h2></div><p class="section-note">Five projects selected to demonstrate GIS methods, analytical workflows, and communication. Detailed case studies and original figures will be added as they are prepared.</p></div><div class="project-grid">
+      <article class="project-card"><div class="visual slate" aria-hidden="true"><span class="visual-label">Data science</span></div><div class="project-body"><h3>Geospatial Big Data</h3><p>Spatial data processing, reproducible analysis, and working with larger geospatial datasets.</p><div class="tags"><span class="tag">Data analysis</span><span class="tag">Workflows</span></div><div class="project-foot">Project case study coming soon</div></div></article>
+      <article class="project-card"><div class="visual earth" aria-hidden="true"><span class="visual-label">Earth observation</span></div><div class="project-body"><h3>Remote Sensing</h3><p>Satellite and elevation data methods for understanding land surfaces and environmental conditions.</p><div class="tags"><span class="tag">Remote sensing</span><span class="tag">Raster GIS</span></div><div class="project-foot">Project case study coming soon</div></div></article>
+      <article class="project-card"><div class="visual" aria-hidden="true"><span class="visual-label">Spatial methods</span></div><div class="project-body"><h3>Spatial Data</h3><p>Organizing, evaluating, and analyzing geographic datasets to support spatial questions.</p><div class="tags"><span class="tag">GIS analysis</span><span class="tag">Spatial data</span></div><div class="project-foot">Project case study coming soon</div></div></article>
+      <article class="project-card"><div class="visual water" aria-hidden="true"><span class="visual-label">Water resources</span></div><div class="project-body"><h3>Hydroinformatics</h3><p>Using environmental observations and computational methods to explore water-related systems.</p><div class="tags"><span class="tag">Hydrology</span><span class="tag">Data workflows</span></div><div class="project-foot">Project case study coming soon</div></div></article>
+      <article class="project-card"><div class="visual forest" aria-hidden="true"><span class="visual-label">Applied GIS</span></div><div class="project-body"><h3>Capstone</h3><p>An applied project integrating geographic data, analysis, and communication.</p><div class="tags"><span class="tag">Project design</span><span class="tag">Cartography</span></div><div class="project-foot">Project case study coming soon</div></div></article>
+    </div></div></section>
+    <section class="section band" id="skills"><div class="wrap"><div class="section-head"><div><p class="section-label">MSGIS competencies</p><h2>Methods & capabilities</h2></div><p class="section-note">These categories align with the MSGIS handbook. Individual project pages will explain and document the specific skills demonstrated.</p></div><div class="skills-grid"><div class="skill"><h3>GIS & spatial analysis</h3><p>Vector and raster methods, spatial reasoning, and analytical interpretation.</p></div><div class="skill"><h3>Spatial data & databases</h3><p>Data acquisition, preparation, structures, and database concepts.</p></div><div class="skill"><h3>Modeling & workflows</h3><p>Repeatable analytical processes, geoprocessing, and documentation.</p></div><div class="skill"><h3>Cartography</h3><p>Map design, symbology, visual communication, and audience awareness.</p></div><div class="skill"><h3>Programming</h3><p>Scripts and computational approaches to spatial data problems.</p></div><div class="skill"><h3>Project communication</h3><p>Research questions, methods, findings, limitations, and clear reporting.</p></div></div></div></section>
+    <section class="section" id="about"><div class="wrap about-grid"><div><p class="section-label">Background</p><h2>About me</h2><div class="about-copy"><p>I'm completing a Master of Science in Geographic Information Science at the University of Utah. My interests are at the intersection of geospatial technology, environmental analysis, and water resources.</p><p>This portfolio documents selected graduate coursework for my MSGIS defense and provides a place to share my work with future collaborators and employers.</p><p>Each completed case study will include project context, data and methodology, results, discussion, and the MSGIS skills demonstrated.</p></div></div><aside class="info"><h3>Education</h3><p><strong>University of Utah</strong><br>Master of Science, Geographic Information Science<br>Expected 2026</p><p><strong>Utah State University</strong><br>BS, Human Experience Design & Interaction<br>2023</p><h3>Portfolio defense</h3><p>December 17, 2026 · University of Utah</p></aside></div></section>
+    <section class="section" id="contact" style="padding-top:0"><div class="wrap"><div class="info"><p class="section-label">Connect</p><h2 style="font-family:Georgia,serif;font-size:2rem;font-weight:500">Let's connect</h2><p>Explore my work and code on <a href="https://github.com/northjackson" target="_blank" rel="noopener noreferrer">GitHub</a>. Additional contact details and a resume can be added here.</p></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>&copy; 2026 Jackson North · University of Utah MSGIS Portfolio</span><span>Built with HTML & CSS · Hosted on <a href="https://pages.github.com/">GitHub Pages</a></span></div></footer>
 </body>
 </html>
